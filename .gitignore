@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Environment variables / Config rahasia
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Uploads lokal (jika file gambar user tidak ingin ikut ter-push)
+uploads/
