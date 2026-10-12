@@ -1,4 +1,4 @@
-const app = require('../index.js'); // Mengimpor konfigurasi app dari file index.js utama di root
+const app = require('../index.js');
 
-// Mengekspor app agar bisa dijalankan sebagai serverless function di Vercel
+
 module.exports = app;
