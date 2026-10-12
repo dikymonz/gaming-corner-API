@@ -222,6 +222,11 @@ app.use((err, req, res, next) => {
   res.status(500).json({ success: false, message: err.message || 'Terjadi kesalahan pada server' });
 });
 
-// Menjalankan Server di Baris Paling Akhir
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🚀 Gaming Corner API running on port ${PORT}`));
+// Menjalankan Server secara lokal (Aman untuk Vercel / Serverless)
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => console.log(`🚀 Gaming Corner API running on port ${PORT}`));
+}
+
+// Ekspor app agar terbaca oleh Vercel Serverless Function (api/index.js)
+module.exports = app;
